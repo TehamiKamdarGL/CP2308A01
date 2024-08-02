@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//----------Website Routes------------------
 Route::get('/', [WebController::class , 'index']);
 Route::get('/about', [WebController::class , 'about']);
 Route::get('/service', [WebController::class , 'service']);
@@ -23,3 +24,20 @@ Route::get('/team', [WebController::class , 'team']);
 Route::get('/testimonial', [WebController::class , 'testimonial']);
 Route::get('/contact', [WebController::class , 'contact']);
 
+
+
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        if(Auth::User()->role == 1){
+            return view('admin.index');
+        } else{
+            return view('website.index');
+        }
+    })->name('dashboard');
+});

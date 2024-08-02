@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class WebController extends Controller
 {
     public function index(){
-return view('website.index');
+        return view('website.index');
     }
     public function about(){
         return view('website.about');
@@ -24,11 +24,11 @@ return view('website.index');
     public function team(){
         return view('website.team');
     }
-    
+
     public function testimonials(){
         return view('website.testimonials');
     }
-    
+
     public function contact(){
         return view('website.contact');
     }
