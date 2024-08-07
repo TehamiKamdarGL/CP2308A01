@@ -1,7 +1,7 @@
-@include('layouts.admin_header');
+@include('layouts.admin_header')
 
 
-@yield('main-section');
+@yield('main-section')
 
 
-@include('layouts.admin_footer');
+@include('layouts.admin_footer')

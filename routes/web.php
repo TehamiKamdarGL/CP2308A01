@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,3 +42,9 @@ Route::middleware([
         }
     })->name('dashboard');
 });
+
+
+
+//-----------Admin ROutes-------------
+Route::get('/pages/insertproduct' , [AdminController::class , 'create']);
+Route::post('/pages/insertproduct' , [AdminController::class , 'store']);
